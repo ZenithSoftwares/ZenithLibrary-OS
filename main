@@ -451,8 +451,8 @@ function Library:MakeWindow(WindowConfig)
 	WindowConfig.IntroText = WindowConfig.IntroText or "Zenith"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
-	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://139153471338595"
-	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxthumb://type=Asset&id=139153471338595&w=420&h=420"
+	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://104340757358366"
+	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxthumb://type=Asset&id=104340757358366&w=420&h=420"
 	Library.Folder = WindowConfig.ConfigFolder
 	Library.SaveCfg = WindowConfig.SaveConfig
 
