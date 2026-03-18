@@ -12,12 +12,12 @@ local Library = {
 	Flags = {},
 	Themes = {
 		Default = {
-			Main = Color3.fromRGB(20, 20, 22),   
-			Second = Color3.fromRGB(30, 30, 32),   
-			Stroke = Color3.fromRGB(60, 60, 65),   
-			Divider = Color3.fromRGB(40, 40, 45),
-			Text = Color3.fromRGB(240, 240, 245),
-			TextDark = Color3.fromRGB(160, 160, 165) 
+			Main = Color3.fromRGB(15, 20, 35),   
+			Second = Color3.fromRGB(25, 30, 45),   
+			Stroke = Color3.fromRGB(45, 60, 90),   
+			Divider = Color3.fromRGB(35, 45, 65),
+			Text = Color3.fromRGB(240, 245, 255),
+			TextDark = Color3.fromRGB(150, 170, 200) 
 		}
 	},
 	SelectedTheme = "Default",
@@ -373,18 +373,18 @@ function Library:MakeNotification(NotificationConfig)
 			Parent = NotificationHolder
 		})
 
-		local NotificationFrame = SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(25, 25, 25), 0, 10), {
+		local NotificationFrame = SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(25, 30, 45), 0, 10), {
 			Parent = NotificationParent, 
 			Size = UDim2.new(1, 0, 0, 0),
 			Position = UDim2.new(1, -55, 0, 0),
 			BackgroundTransparency = 0,
 			AutomaticSize = Enum.AutomaticSize.Y
 		}), {
-			MakeElement("Stroke", Color3.fromRGB(93, 93, 93), 1.2),
+			MakeElement("Stroke", Color3.fromRGB(45, 60, 90), 1.2),
 			MakeElement("Padding", 12, 12, 12, 12),
 			SetProps(MakeElement("Image", NotificationConfig.Image), {
 				Size = UDim2.new(0, 20, 0, 20),
-				ImageColor3 = Color3.fromRGB(240, 240, 240),
+				ImageColor3 = Color3.fromRGB(240, 245, 255),
 				Name = "Icon"
 			}),
 			SetProps(MakeElement("Label", NotificationConfig.Name, 15), {
@@ -399,7 +399,7 @@ function Library:MakeNotification(NotificationConfig)
 				Font = Enum.Font.GothamBold,
 				Name = "Content",
 				AutomaticSize = Enum.AutomaticSize.Y,
-				TextColor3 = Color3.fromRGB(200, 200, 200),
+				TextColor3 = Color3.fromRGB(200, 210, 230),
 				TextWrapped = true
 			})
 		})
@@ -451,8 +451,8 @@ function Library:MakeWindow(WindowConfig)
 	WindowConfig.IntroText = WindowConfig.IntroText or "Zenith"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
-	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://104340757358366"
-	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxthumb://type=Asset&id=104340757358366&w=420&h=420"
+	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://135637573311327"
+	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxthumb://type=Asset&id=135637573311327&w=420&h=420"
 	Library.Folder = WindowConfig.ConfigFolder
 	Library.SaveCfg = WindowConfig.SaveConfig
 
@@ -776,8 +776,8 @@ TweenService:Create(Tab.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.
 					ItemContainer.Visible = false
 				end    
 			end  
-TweenService:Create(TabFrame.Ico, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {ImageTransparency = 0, ImageColor3 = Color3.fromRGB(70, 150, 255)}):Play()
-TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {TextTransparency = 0, TextColor3 = Color3.fromRGB(70, 150, 255)}):Play()
+TweenService:Create(TabFrame.Ico, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {ImageTransparency = 0, ImageColor3 = Color3.fromRGB(0, 170, 255)}):Play()
+TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {TextTransparency = 0, TextColor3 = Color3.fromRGB(0, 170, 255)}):Play()
 			TabFrame.Title.Font = Enum.Font.GothamBlack
 			Container.Visible = true   
 		end)
@@ -903,7 +903,7 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 				ToggleConfig.Name = ToggleConfig.Name or "Toggle"
 				ToggleConfig.Default = ToggleConfig.Default or false
 				ToggleConfig.Callback = ToggleConfig.Callback or function() end
-				ToggleConfig.Color = ToggleConfig.Color or Color3.fromRGB(9, 99, 195)
+				ToggleConfig.Color = ToggleConfig.Color or Color3.fromRGB(0, 170, 255)
 				ToggleConfig.Flag = ToggleConfig.Flag or nil
 				ToggleConfig.Save = ToggleConfig.Save or false
 
@@ -989,7 +989,7 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 				SliderConfig.Default = SliderConfig.Default or 50
 				SliderConfig.Callback = SliderConfig.Callback or function() end
 				SliderConfig.ValueName = SliderConfig.ValueName or ""
-				SliderConfig.Color = SliderConfig.Color or Color3.fromRGB(9, 149, 98)
+				SliderConfig.Color = SliderConfig.Color or Color3.fromRGB(0, 170, 255)
 				SliderConfig.Flag = SliderConfig.Flag or nil
 				SliderConfig.Save = SliderConfig.Save or false
 
@@ -1701,11 +1701,11 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 end   
 
 local Configs_HUB = {
-  Cor_Hub = Color3.fromRGB(15, 15, 15),
-  Cor_Options = Color3.fromRGB(15, 15, 15),
-  Cor_Stroke = Color3.fromRGB(60, 60, 60),
-  Cor_Text = Color3.fromRGB(240, 240, 240),
-  Cor_DarkText = Color3.fromRGB(140, 140, 140),
+  Cor_Hub = Color3.fromRGB(15, 20, 35),
+  Cor_Options = Color3.fromRGB(25, 30, 45),
+  Cor_Stroke = Color3.fromRGB(45, 60, 90),
+  Cor_Text = Color3.fromRGB(240, 245, 255),
+  Cor_DarkText = Color3.fromRGB(150, 170, 200),
   Corner_Radius = UDim.new(0, 4),
   Text_Font = Library.Font
 }
