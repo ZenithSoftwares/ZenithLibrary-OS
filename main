@@ -499,9 +499,11 @@ function Library:MakeWindow(WindowConfig)
 		Size = UDim2.new(1, 0, 0, 50)
 	})
 
+	-- Seitliches Panel (WindowStuff) leicht transparent machen
 	local WindowStuff = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
 		Size = UDim2.new(0, 150, 1, -50),
-		Position = UDim2.new(0, 0, 0, 50)
+		Position = UDim2.new(0, 0, 0, 50),
+		BackgroundTransparency = 0.15  -- leicht durchsichtig
 	}), {
 		AddThemeObject(SetProps(MakeElement("Frame"), {
 			Size = UDim2.new(1, 0, 0, 10),
@@ -570,11 +572,13 @@ AddThemeObject(SetProps(MakeElement("Label", LocalPlayer.Name, WindowConfig.Hide
 		Position = UDim2.new(0, 0, 1, -1)
 	}), "Stroke")
 
+	-- Hauptfenster (MainWindow) leicht transparent machen
 	local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
 		Parent = Container,
 		Position = UDim2.new(0.5, -307, 0.5, -172),
 		Size = UDim2.new(0, 615, 0, 344),
-		ClipsDescendants = true
+		ClipsDescendants = true,
+		BackgroundTransparency = 0.15  -- leicht durchsichtig
 	}), {
 		SetChildren(SetProps(MakeElement("TFrame"), {
 			Size = UDim2.new(1, 0, 0, 50),
@@ -989,8 +993,7 @@ TweenService:Create(TabFrame.Title, TweenInfo.new(0.25, Enum.EasingStyle.Quint, 
 				SliderConfig.Default = SliderConfig.Default or 50
 				SliderConfig.Callback = SliderConfig.Callback or function() end
 				SliderConfig.ValueName = SliderConfig.ValueName or ""
-				-- Changed default color from green (9,149,98) to blue (9,99,195)
-				SliderConfig.Color = SliderConfig.Color or Color3.fromRGB(9, 99, 195)
+				SliderConfig.Color = SliderConfig.Color or Color3.fromRGB(9, 99, 195)  -- blue, like toggle
 				SliderConfig.Flag = SliderConfig.Flag or nil
 				SliderConfig.Save = SliderConfig.Save or false
 
